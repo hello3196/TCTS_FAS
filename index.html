@@ -222,28 +222,28 @@
     <div class="container">
      <h2 class="title">Experiments</h2>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/Appendix_mask_free.png" alt="MY ALT TEXT"
-       style="display: block; margin: 0 auto; height:500px;"
-        />
-        <h2 class="subtitle has-text-centered">
-          <b>Mask-free object editing samples with and without cross-attention map weighted sampling.</b> <br>Starting from the image on the left, the result images every 20 steps of editing with 30% masking ratio. <b>Top</b>: Failure case without weighted sampling, <b>Bottom</b>: Results with weighted sampling.
-        </h2>
-      </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/mask_free.png" alt="MY ALT TEXT"
-       style="display: block; margin: 0 auto; height:500px;"
+       style="display: block; margin: 0 auto; height:400px;"
         />
         <h2 class="subtitle has-text-centered">
-          <b>Examples of mask-free editing samples with cross-attention map.</b> <br>The cross-attention map is multiplied to the score map of TCTS to perform weighted sampling.
+          <b>Examples of mask-free editing samples with cross-attention map.</b> <br>Motivated by the operation of self-attention maps in frequency adaptive sampling, we leverage a cross-attention map corresponding to the word of the object that is to be changed, giving weights to resample tokens so that the corresponding locations can be resampled. The cross-attention map is multiplied to the score map of TCTS to perform weighted sampling.
+        </h2>
+      </div>
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/Appendix_mask_free.png" alt="MY ALT TEXT"
+       style="display: block; margin: 0 auto; height:400px;"
+        />
+        <h2 class="subtitle has-text-centered">
+          <b>Comparing mask-free object editing samples with and without cross-attention map weighted sampling.</b> <br>Starting from the image on the left, the result images every 20 steps of editing with 30% masking ratio. <b>Top</b>: Failure case without weighted sampling, <b>Bottom</b>: Results with weighted sampling.
         </h2>
       </div>
        <div class="item">
         <!-- Your image here -->
         <img src="static/images/image_refine2.png" alt="MY ALT TEXT"
-       style="display: block; margin: 0 auto; height:500px;"
+       style="display: block; margin: 0 auto; height:400px;"
         />
         <h2 class="subtitle has-text-centered">
           <b>Results of image refinement using TCTS.</b><br> <b>Top</b>: Original samples, <b>Bottom</b>: Refined images for 8-steps with TCTS.
@@ -261,7 +261,7 @@
   <div class="hero-body">
         <!-- Your image here -->
         <img src="static/images/Appendix_step_perf.png" alt="MY ALT TEXT"
-        style="display: block; margin: 0 auto; height:500px;"
+        style="display: block; margin: 0 auto; height:300px;"
           />
         <h2 class="subtitle has-text-centered">
          <b>Performance comparison of each method at different steps. </b><br>In our experiments, we fixed classifier-free guidance to 5. When
@@ -275,7 +275,7 @@ we use FAS method, it was possible to lower the FID score while maintaining text
   <div class="hero-body">
         <!-- Your image here -->
         <img src="static/images/Appendix_time_perf.png" alt="MY ALT TEXT"
-        style="display: block; margin: 0 auto; height:500px;"
+        style="display: block; margin: 0 auto; height:300px;"
           />
         <h2 class="subtitle has-text-centered">
          <b>Comparison of our model and the baseline in performance over generation time. </b><br>In our experiments, we fixed classifier-free guidance to 5.
