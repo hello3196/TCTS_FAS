@@ -190,7 +190,7 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-     <h2 class="title">Main</h2>
+     <h2 class="title">Method</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
@@ -198,7 +198,7 @@
        style="display: block; margin: 0 auto; height:500px;"
         />
         <h2 class="subtitle has-text-centered">
-          <b>Overall generation framework of proposed TCTS and FAS.</b>
+          <b>Overall generation framework of proposed TCTS(Text-Conditioned Token Selection) and FAS(Frequency Adaptive Sampling).</b> <br> After the generator predicts the tokens, TCTS exploits the text condition to detect misaligned tokens and outputs the score map. Meanwhile, FAS splits the tokens according to the frequency using the self-attention map from the generator, performing revocable sampling to high-frequency split and persistent sampling to low-frequency split. The adaptive sampling predicts  x&#770<sup>0</sup> and decide a few of the locations to mask according to x<sup>t</sup>. The token maps produced by FAS is combined with the score map to predict x<sup>t-1</sup>. After iterative process, our model removes all the masks and generates x<sup>0</sup>.
         </h2>
       </div>
       <div class="item">
@@ -207,7 +207,7 @@
        style="display: block; margin: 0 auto; height:500px;"
         />
         <h2 class="subtitle has-text-centered">
-          <b>Generated samples on MS-COCO dataset and evaluation graph of various sampling methods showing their trade-off.</b>
+          <b>Generated samples on MS-COCO dataset and evaluation graph of various sampling methods showing their trade-off.</b> <br>Uniform sampling is a fixed strategy with notably poor text alignment compared to other methods (FID-40K: 15.61, MID-L: 21.23). Random revoke sampling is a revocable strategy with improved text alignment (FID-40K: 16.81, MID-L: 26.98). Ours is TCTS combined with FAS, where both the image quality and the text alignment are significantly better compared to those of baselines (FID-40K: 13.6, MID-L: 29.5). Metrics are measured on all 40K images with their corresponding single caption. The classifier-free guidance scale was fixed at 5 for all sampling methods.
         </h2>
       </div>
   </div>
@@ -216,6 +216,47 @@
 </section>
 <!-- End image carousel -->
 
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+     <h2 class="title">Experiments</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/Appendix_mask_free.png" alt="MY ALT TEXT"
+       style="display: block; margin: 0 auto; height:500px;"
+        />
+        <h2 class="subtitle has-text-centered">
+          <b>Mask-free object editing samples with and without cross-attention map weighted sampling.</b> <br>Starting from the image on the left, the result images every 20 steps of editing with 30% masking ratio. <b>Top</b>: Failure case without weighted sampling, <b>Bottom</b>: Results with weighted sampling.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/mask_free.png" alt="MY ALT TEXT"
+       style="display: block; margin: 0 auto; height:500px;"
+        />
+        <h2 class="subtitle has-text-centered">
+          <b>Examples of mask-free editing samples with cross-attention map.</b> <br>The cross-attention map is multiplied to the score map of TCTS to perform weighted sampling.
+        </h2>
+      </div>
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/image_refine2.png" alt="MY ALT TEXT"
+       style="display: block; margin: 0 auto; height:500px;"
+        />
+        <h2 class="subtitle has-text-centered">
+          <b>Results of image refinement using TCTS.</b><br> <b>Top</b>: Original samples, <b>Bottom</b>: Refined images for 8-steps with TCTS.
+        </h2>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
 <section class="hero is-small">
   <div class="hero-body">
         <!-- Your image here -->
@@ -223,7 +264,9 @@
         style="display: block; margin: 0 auto; height:500px;"
           />
         <h2 class="subtitle has-text-centered">
-          First image description.
+         <b>Performance comparison of each method at different steps. </b><br>In our experiments, we fixed classifier-free guidance to 5. When
+we use FAS method, it was possible to lower the FID score while maintaining text alignment.
+
         </h2>
 </div>
 </section>
@@ -235,7 +278,7 @@
         style="display: block; margin: 0 auto; height:500px;"
           />
         <h2 class="subtitle has-text-centered">
-          First image description.
+         <b>Comparison of our model and the baseline in performance over generation time. </b><br>In our experiments, we fixed classifier-free guidance to 5.
         </h2>
 </div>
 </section>
